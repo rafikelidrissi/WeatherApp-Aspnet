@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "eWeather";
+}
+
+@model WeatherModel
+
+<img src="eweather-logo.png" class="weather-logo" />
+
+<form asp-controller="Home" asp-action="Index" method="post" >
+    <select asp-for="SelectedRegionName" onchange="this.form.submit()" class="weather-dropdown">
+        @foreach (var item in Model.StationMeasurements)
+        {
+            <option value="@item.Regio">@item.Regio</option>
+        }
+    </select>
+</form>
+
+@if (this.Model.SelectedRegion != null)
+{
+    <div class="row weather-details">
+        <div class="flex-item">
+            <span class="fa-solid fa-temperature-three-quarters weather-icon"></span>
+            <div>
+                <span class="weather-measurement">@this.Model.SelectedRegion.Temperature.ToString().Replace(",", ".")</span>
+                <span>Actuele temperatuur</span>
+            </div>
+        </div>
+        <div class="flex-item">
+            <span class="fa-solid fa-person weather-icon"></span>
+            <div>
+                <span class="weather-measurement">@this.Model.SelectedRegion.FeelTemperature.ToString().Replace(",", ".")</span>
+                <span>Gevoelstemperatuur</span>
+            </div>
+        </div>
+        <div class="flex-item">
+            <span class="fa-solid fa-temperature-arrow-down weather-icon"></span>
+            <div>
+                <span class="weather-measurement">@this.Model.SelectedRegion.GroundTemperature.ToString().Replace(",", ".")</span>
+                <span>Grond temperatuur</span>
+            </div>
+        </div>
+        <div class="flex-item">
+            <span class="fa-solid fa-sun weather-icon"></span>
+            <div>
+                <span class="weather-measurement">@this.Model.SelectedRegion.SunPower</span>
+                <span>Zonnekracht</span>
+            </div>
+        </div>
+        <div class="flex-item">
+            <span class="fa-solid fa-droplet weather-icon"></span>
+            <div>
+                <span class="weather-measurement">@this.Model.SelectedRegion.RainFallLastHour mm</span>
+                <span>Regen laatste uur</span>
+            </div>
+        </div>
+        <div class="flex-item">
+            <span class="fa-solid fa-compass weather-icon"></span>
+            <div>
+                <span class="weather-measurement">@this.Model.SelectedRegion.WindDirection</span>
+                <span>Windrichting</span>
+            </div>
+        </div>
+    </div>
+}

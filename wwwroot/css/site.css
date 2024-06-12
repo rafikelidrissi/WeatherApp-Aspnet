@@ -1,0 +1,117 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+html {
+    border-top: 15px solid #4ad6ed;
+}
+
+.row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.weather-dropdown {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    height: 40px;
+    background-color: white;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 50px;
+}
+
+    .weather-dropdown option {
+        background-color: white !important;
+        color: #000000;
+    }
+
+.weather-details {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 10px;
+    color: #000000;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.flex-item {
+    flex-basis: 100%;
+    flex: 0 0 calc(70%/3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+    .flex-item div {
+        display: flex;
+        flex-direction: column;
+    }
+
+.weather-logo {
+    max-width: 300px;
+}
+
+.weather-icon {
+    line-height: 0;
+    font-size: 3em !important;
+}
+
+.weather-measurement {
+    color: #4ad6ed;
+    font-size: 2.3em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .flex-item {
+        flex: 0 0 calc(100%/2)
+    }
+}
